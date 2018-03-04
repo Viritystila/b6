@@ -62,17 +62,17 @@ void main(void){
 
   //color key
 
-  vec4 fg=v3;
-  vec4 bg=cf5;
+  vec4 fg=v1;
+  vec4 bg=v3;
 
   float maxrb = max( fg.r, fg.g );
-  float k = clamp( (fg.b-maxrb)*50, 0.0, 1.0 );
+  float k = clamp( (fg.b-maxrb)*90, 0.0, 1.0 );
 
   float dg = fg.b;
-  fg.b = min( fg.b, maxrb*0.18);
+  fg.b = min( fg.b, maxrb*0.8);
     fg += dg - fg.b;
 
-    vec4 cf6=mix(fg, bg, k*iA);
+    vec4 cf6=mix(fg, bg, k);
     vec4 cf7=mix(cf6, v1, iB);
 
 
